@@ -8,10 +8,14 @@
 import Foundation
 import Alamofire
 
+enum NetworkingError: Error {
+    case invalidURL
+}
+
 protocol Networkable { }
 
 extension Networkable {
-    func fetchListOf<Output: Codable>(type: Output, from url: URL) async throws -> [Output] {
+    func fetchListOf<Output: Codable>(type: Output.Type, from url: URL) async throws -> [Output] {
         let dataRequest = getDataRequest(url: url)
         let response = try await getDataResponseOf(type: [Output].self, dataRequest: dataRequest)
         return response
@@ -28,6 +32,7 @@ extension Networkable {
         case .success(let value):
             return value
         case .failure(let error):
+            print(error)
             throw error
         }
     }
