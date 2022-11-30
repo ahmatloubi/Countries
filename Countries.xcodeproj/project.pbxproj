@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		605F5948293790830058A3B9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F5947293790830058A3B9 /* Country.swift */; };
+		605F594A293790AD0058A3B9 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F5949293790AD0058A3B9 /* Name.swift */; };
+		605F594C2937916F0058A3B9 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F594B2937916F0058A3B9 /* NetworkHelper.swift */; };
 		60609D7729378C6B00A2BE32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60609D7629378C6B00A2BE32 /* AppDelegate.swift */; };
 		60609D7929378C6B00A2BE32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60609D7829378C6B00A2BE32 /* SceneDelegate.swift */; };
 		60609D7B29378C6B00A2BE32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60609D7A29378C6B00A2BE32 /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		0584A9AD413BFDA7C62F0E8B /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 		1898D41E8EE163061E2FC2FB /* Pods_Countries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		605F5947293790830058A3B9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		605F5949293790AD0058A3B9 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		605F594B2937916F0058A3B9 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		60609D7329378C6B00A2BE32 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60609D7629378C6B00A2BE32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60609D7829378C6B00A2BE32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 		60609D8A29378CD400A2BE32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				605F5947293790830058A3B9 /* Country.swift */,
+				605F5949293790AD0058A3B9 /* Name.swift */,
+				605F594B2937916F0058A3B9 /* NetworkHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,7 +105,6 @@
 				A3712665E84D27B3D4C3457B /* Pods-Countries.debug.xcconfig */,
 				0584A9AD413BFDA7C62F0E8B /* Pods-Countries.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -215,9 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				605F5948293790830058A3B9 /* Country.swift in Sources */,
 				60609D7B29378C6B00A2BE32 /* ViewController.swift in Sources */,
 				60609D7729378C6B00A2BE32 /* AppDelegate.swift in Sources */,
 				60609D7929378C6B00A2BE32 /* SceneDelegate.swift in Sources */,
+				605F594C2937916F0058A3B9 /* NetworkHelper.swift in Sources */,
+				605F594A293790AD0058A3B9 /* Name.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
