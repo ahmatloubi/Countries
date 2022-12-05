@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Name: Codable {
+struct Name: Codable, Hashable {
     let common: String
     let official: String
 }
