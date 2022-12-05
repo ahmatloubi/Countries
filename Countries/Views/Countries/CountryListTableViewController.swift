@@ -13,7 +13,6 @@ class CountryListTableViewController: BaseTableViewController, UISearchResultsUp
     
     private var cancelBarButton: UIBarButtonItem!
     private var doneBarButton: UIBarButtonItem!
-    private var tableViewRefreshControl: UIRefreshControl?
     private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Properties

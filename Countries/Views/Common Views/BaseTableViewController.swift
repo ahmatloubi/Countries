@@ -34,7 +34,7 @@ class BaseTableViewController: UITableViewController {
     }()
     
     private let backGroundView = UIView()
-    
+    var tableViewRefreshControl: UIRefreshControl?
     // MARK: - Properties
     private var viewModel: BaseTableViewControllerTableViewModel
     private var cancellables = Set<AnyCancellable>()
@@ -43,7 +43,7 @@ class BaseTableViewController: UITableViewController {
         "There is no item to show"
     }
     // MARK: - init
-
+    
     init(viewModel: BaseTableViewControllerTableViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -53,7 +53,7 @@ class BaseTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAccessorViews()
@@ -61,7 +61,7 @@ class BaseTableViewController: UITableViewController {
     }
     
     // MARK: - Scrollview delegates
-
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let currentOffset = scrollView.contentOffset.y
@@ -70,13 +70,13 @@ class BaseTableViewController: UITableViewController {
             loadMore()
         }
     }
-
+    
     // MARK: - Events
-
+    
     func loadMore() { }
     
     // MARK: - Helpers
-
+    
     private func setupAccessorViews() {
         noItemToShowView.translatesAutoresizingMaskIntoConstraints = false
         backGroundView.addSubview(noItemToShowView)
@@ -112,18 +112,17 @@ class BaseTableViewController: UITableViewController {
     
     private func setPublishers() {
         viewModel.$viewState
+            .receive(on: OperationQueue.main)
             .sink { viewToShow in
-                DispatchQueue.main.async {
-                    self.handleViewToShow(viewToShow)
-                }
+                self.handleViewToShow(viewToShow)
             }
             .store(in: &cancellables)
         viewModel.shouldReloadTableViewPublisher
+            .receive(on: OperationQueue.main)
             .sink { shouldReload in
                 if shouldReload {
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
                 }
             }
             .store(in: &cancellables)
